@@ -4,6 +4,7 @@ import image2 from "@/assets/images/project-2.jpg";
 import image3 from "@/assets/images/project-3.jpg";
 import image4 from "@/assets/images/project-4.jpg";
 import image5 from "@/assets/images/project-5.jpg";
+import Image from "next/image";
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const projects = [
@@ -30,7 +31,33 @@ const projects = [
 ];
 
 const Projects: FC = () => {
-  return <div>Projects</div>;
+  return <section className="section">
+    <div className="container !max-w-full">
+      <h2 className="text-4xl font-bold md:text-7xl lg:text-8xl">My Work</h2>
+      <div className="mt-10 md:mt-16 lg:mt-20">
+        {projects.map(({ name, image }) =>(
+          <a href="#" key={name} className="border-t last:border-b border-stone-400 border-stone-400 border-dotted py-6 md:py-8 lg:py-10 flex flex-col">
+            <div>
+              <div className="aspect-video md:hidden">
+                <Image src = {image} alt={`${name}`} className="size-full object-cover" />
+              </div>
+              <div className="mt-8 md:mt-0 flex justify-between items-center">
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold">{name}</h3>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"/></svg>
+              </div>
+            </div>
+          </a>
+
+
+
+
+        )
+
+
+        )}
+      </div>
+    </div>
+  </section>;
 };
 
 export default Projects;

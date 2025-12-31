@@ -22,7 +22,7 @@ const Hero: FC = () => {
 
 
         <Button variant="tertiary">
-        Let's Talk
+        Let&apos; Talk
         </Button>
       </div>
     </div>

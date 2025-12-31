@@ -25,7 +25,26 @@ const faqs = [
 ];
 
 const FAQs: FC = () => {
-  return <div>FAQs</div>;
+  return <section className="sections">
+    <div className="container !max-w-full">
+      <h2 className="text-4xl md:text-7xl lg:text-8xl">FAQs</h2>
+      <div className="mt-10 md:mt-16 lg:mt-20">
+        {faqs.map(({ question, answer }) => (
+          <div key={question} className="border-t border-stone-400 border-dotted py-6 md:py-8 lg:py-10 last:border-b border-stone-400 border-dotted
+          ">
+             <div className="flex items-center justify-between gap-4">
+                <div className="text-2xl md:text-3xl lg:text-4xl">
+                  {question}
+                </div>
+                <div className="inline-flex items-center justify-center size-11 shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"/></svg>
+                </div>
+              </div> 
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>;
 };
 
 export default FAQs;
